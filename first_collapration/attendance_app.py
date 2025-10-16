@@ -123,7 +123,6 @@ class AttendanceApp:
         def add_database(employee_name, shift_name):
             a = list(shift_name)[1:]
             pick_team = shift_name[1:a.index(' ')+1]
-            print(pick_team, 'hi')
             self.pdf_data(pick_team)
             shift = shift_name
             name = employee_name
