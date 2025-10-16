@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GXO Attendance</title>
+</head>
+<body>
+    <h1>Select Your Shift</h1>
+    {% for shift in shifts %}
+        <form action="{{ url_for('shift_page', shift_name=shift.lower()) }}" method="get">
+            <button type="submit">{{ shift.title() }}</button>
+        </form>
+    {% endfor %}
+</body>
+</html>

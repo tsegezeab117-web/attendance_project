@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance - {{ employee_name }}</title>
+</head>
+<body>
+    <h1>Attendance for {{ employee_name }} ({{ shift_name }})</h1>
+
+    <form method="post" action="/add_to_database/{{ employee_name }}/ {{ shift_name.lower() }}">
+        <label>Time In:</label>
+        <input type="time" name="time_in"><br><br>
+
+        <label>Time In signature:</label>
+        <input type="text" name="signature_time_in"><br><br>
+
+        <label>Break:</label>
+        <input type="time" name="break_time"><br><br>
+
+        <label>Time Out:</label>
+        <input type="time" name="time_out"><br><br>
+
+        <label>Time out signature:</label>
+        <input type="text" name="signature_time_out"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('shift_page', shift_name=shift_name.lower()) }}">Back to {{ shift_name }}</a>
+    <br>
+    <a href="{{ url_for('home') }}">Back to Shifts</a>
+</body>
+</html>
